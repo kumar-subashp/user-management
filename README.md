@@ -1,5 +1,5 @@
 
-#**User Management REST API with Swagger**
+# User Management REST API with Swagger
 
 - Swagger UI Interface URL : [http://localhost:8080/swagger-ui.html]
 
