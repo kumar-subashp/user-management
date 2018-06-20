@@ -8,10 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
@@ -98,9 +95,7 @@ public class UserManagementIntegrationTest {
                 createURLWithPort("/users/111-11-1111"),
                 HttpMethod.DELETE, entity, String.class);
 
-        String expected = "[]";
-
-        assertEquals("true", response.getBody());
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
     }
 
     private String createURLWithPort(String uri) {

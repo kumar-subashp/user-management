@@ -49,6 +49,6 @@ public class UserController {
     public ResponseEntity<Boolean> deleteUser(@Valid @PathVariable String ssn) {
 
         userService.deleteUser(ssn);
-        return ResponseEntity.status(HttpStatus.OK).body(true);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(true);
     }
 }
